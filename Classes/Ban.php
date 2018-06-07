@@ -24,7 +24,7 @@ Class Ban extends Crud {
 	public function __construct($name = "", $uuid= "" ,$raseon= "", $operator= "", $punishmentType="", $start= "", $end="", $calculation = 0, $contador = 0){
 		$this->name 			= $name;
 		$this->uuid 			= $uuid;
-		$this->raseon 			= $raseon;
+		$this->raseon 			= mb_strtoupper($raseon, "UTF-8");
 		$this->operator 		= $operator;
 		$this->punishmentType 	= $punishmentType;
 		$this->start 			= $start;
@@ -87,15 +87,21 @@ Class Ban extends Crud {
 			$endBan 	= "<th style='color:green'>".$endBan."</th>";
 		}
 
+		if ($this->operator == "CONSOLE") {
+			$this->operator = "<th><span class=\"oi oi-terminal\"></span>&nbsp".$this->operator."</th>";
+		}else{
+			$this->operator = "<th><img class='img-avatar' data-html='true' title='<b><center>".strtoupper($this->operator)."</b></center>' data-content=\"<img src='https://minotar.net/armor/body/".$this->operator."/100'/>\" data-toggle='popover'  src='https://minotar.net/avatar/".$this->operator."/24'>".strtoupper($this->operator)."</th>";	
+		}
+
 		// MSG BUTTON		
-		$msg = "<button class=\"btn btn-sm btn-light btn-block\" title='<center>".RASEON."</center>' data-toggle='popover' data-html='true' data-content='".strtoupper($this->raseon)."' ><span class=\"oi oi-magnifying-glass\"></span></button>";
+		$msg = "<button class=\"btn btn-sm btn-light btn-block uppercase\" title='<center>".RASEON."</center>' data-toggle='popover' data-html='true' data-content='".$this->raseon."' ><span class=\"oi oi-magnifying-glass\"></span></button>";
 		return 
 		"<th>".$this->contador."</th>".
-		"<th><img class='img-avatar' data-html='true' data-content=\"<img src='https://minotar.net/armor/body/".$this->name."/100'/>\" data-toggle='popover'  src='https://minotar.net/avatar/".$this->name."/24'>  ".strtoupper($this->name)."</th>".
-		"<th>".$msg."</th>".
-		"<th>".$this->operator."</th>".
-		$bantype.
-		"<th>".$startBan."</th>".
-		$endBan;
+		"<th><img class='img-avatar' data-html='true' title='<b><center>".strtoupper($this->name)."</b></center>' data-content=\"<img src='https://minotar.net/armor/body/".$this->name."/100'/>\" data-toggle='popover'  src='https://minotar.net/avatar/".$this->name."/24'>  ".strtoupper($this->name)."</th>".
+		"<th>".$msg."</th>"
+		.$this->operator
+		.$bantype
+		."<th>".$startBan."</th>"
+		.$endBan;
 	}
 }
