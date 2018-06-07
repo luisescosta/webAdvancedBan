@@ -43,7 +43,6 @@ $punishments = new Ban();
 										<th scope="col"><?php echo NICK 	?></th>
 										<th scope="col"><?php echo RASEON 	?></th>
 										<th scope="col"><?php echo BY 		?></th>
-										<th scope="col"><?php echo TYPE 	?></th>
 										<th scope="col"><?php echo DATE 	?></th>
 										<th scope="col"><?php echo TIME 	?></th>					
 									</tr>
@@ -62,7 +61,7 @@ $punishments = new Ban();
 										($punishments->getOffset() <= 0) ? $contador = 0 : $contador = $punishments->getOffset();
 										foreach ($array as $value):
 											$contador++;
-											$punishments = new Ban($value->name, $value->uuid, $value->reason, $value->operator, $value->punishmentType, $value->start, $value->end, $value->calculation, $contador);	
+											$punishments = new Ban($value->name, $value->uuid, $value->reason, $value->operator, $value->punishmentType, $value->start, $value->end, $value->calculation, $contador);
 										?>
 									<tr>
 										<?php echo $punishments; ?>
