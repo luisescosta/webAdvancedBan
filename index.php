@@ -43,7 +43,6 @@ $punishments = new Ban();
 										<th scope="col"><?php echo NICK 	?></th>
 										<th scope="col"><?php echo RASEON 	?></th>
 										<th scope="col"><?php echo BY 		?></th>
-										<th scope="col"><?php echo TYPE 	?></th>
 										<th scope="col"><?php echo DATE 	?></th>
 										<th scope="col"><?php echo TIME 	?></th>					
 									</tr>

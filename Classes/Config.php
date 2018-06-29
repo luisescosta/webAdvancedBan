@@ -14,7 +14,6 @@ const LANGUAGE = "en";
 *	DB_USER USER NAME
 *	DB_PASS PASSWORD
 */
-
 const DB_HOST 	= "localhost"; 
 const DB_NAME 	= "advancedban";
 const DB_USER 	= "root";
