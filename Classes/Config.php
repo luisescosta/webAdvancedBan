@@ -14,12 +14,6 @@ const LANGUAGE = "en";
 *	DB_USER USER NAME
 *	DB_PASS PASSWORD
 */
-// const DB_HOST 	= "sql2.freemysqlhosting.net"; 
-// const DB_NAME 	= "sql2242296";
-// const DB_USER 	= "sql2242296";
-// const DB_PASS 	= "vU2*aT3*";
-// const DB_PORT 	= "3306";
-
 
 const DB_HOST 	= "localhost"; 
 const DB_NAME 	= "advancedban";
