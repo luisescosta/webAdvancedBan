@@ -1,7 +1,7 @@
 <?php 
 require_once("Crud.php");
 Class Ban extends Crud {
-	protected $table = "punishments";
+	protected $table = "Punishments";
 	// LIMITE DE REGISTRO POR PAGINAS
 	private $limite = LIMIT_PAG;
 	private $pagina;
@@ -52,9 +52,16 @@ Class Ban extends Crud {
 	public function rowCount(){
 		$sql	= "SELECT * FROM $this->table";
 		$stmt	= DB::prepare($sql);
-		$stmt->execute();
-		return $stmt->rowCount();
-	}
+		try{
+			$stmt->execute();
+			return $stmt->rowCount();	
+		} catch (PDOException $e) {
+			if ($e->getCode() == '42S02' or $e->getCode() == 1146) {
+			 	echo "ERRO: ".$e->getCode()." Table '".$this->table."' doesn't exist <br>";
+			}else{
+				echo $e->getMessage();	
+			}
+		}	}
 
 	public function findAllLimit(){
 		$page = new Pagina();
@@ -68,8 +75,17 @@ Class Ban extends Crud {
 			$sql	= "SELECT * FROM $this->table order by id DESC LIMIT $this->limite OFFSET $this->offset";
 			$stmt	= DB::prepare($sql);
 		}
-		$stmt->execute();
-		return $stmt->fetchAll();
+		try{
+			$stmt->execute();
+			return $stmt->fetchAll();	
+		} catch (PDOException $e) {
+			if ($e->getCode() == '42S02' or $e->getCode() == 1146) {
+			 	echo "ERRO: ".$e->getCode()." Table '".$this->table."' doesn't exist <br>";
+			}else{
+				echo $e->getMessage();	
+			}
+		}
+		
 	}
 
 	public function getOffset(){

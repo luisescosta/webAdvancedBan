@@ -1,7 +1,7 @@
 <?php 
 require_once("Crud.php");
 Class Historico extends Crud {
-	protected $table = "punishmenthistory";
+	protected $table = "PunishmentHistory";
 	// LIMITE DE REGISTRO POR PAGINAS
 	private $limite = LIMIT_PAG;
 	private $pagina;

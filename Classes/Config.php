@@ -14,10 +14,18 @@ const LANGUAGE = "en";
 *	DB_USER USER NAME
 *	DB_PASS PASSWORD
 */
-const DB_NAME 	= "advancedban";
+// const DB_HOST 	= "sql2.freemysqlhosting.net"; 
+// const DB_NAME 	= "sql2242296";
+// const DB_USER 	= "sql2242296";
+// const DB_PASS 	= "vU2*aT3*";
+// const DB_PORT 	= "3306";
+
+
 const DB_HOST 	= "localhost"; 
+const DB_NAME 	= "advancedban";
 const DB_USER 	= "root";
 const DB_PASS 	= "root";
+const DB_PORT 	= "3306";
 
 /**
 *	CONFIG LIMIT PAGINATION
@@ -41,6 +49,8 @@ if (LANGUAGE == "PT_BR" OR LANGUAGE == "PT-BR" OR LANGUAGE == "pt-br" OR LANGUAG
 	define("TYPE"		, "TIPO");
 	define("DATE"		, "DATA");
 	define("TIME" 		, "TEMPO");
+	define("PROX" 		, "Proximo");
+	define("VOLT" 		, "Voltar");
 
 	// TYPE IN TABLE
 	define("PERMANENT"	, "PERMANENTE");
@@ -60,12 +70,13 @@ if (LANGUAGE == "PT_BR" OR LANGUAGE == "PT-BR" OR LANGUAGE == "pt-br" OR LANGUAG
 	define("TB_INDEX" 	, "BANNED LIST");
 	define("TB_HISTORY", "HISTORY LIST");
 	define("SEARCH" 	, "Search");
-	define("RASEON" 	, "RASEON");
+	define("RASEON" 	, "REASEON");
 	define("BY" 		, "BY");
 	define("TYPE"		, "TYPE");
 	define("DATE"		, "DATE");
 	define("TIME" 		, "EXPIRES");
-	
+	define("PROX" 		, "Next");
+	define("VOLT" 		, "Previous");
 
 	// TYPE IN TABLE
 	define("PERMANENT"	, "PERMANENT");

@@ -19,7 +19,7 @@
 	<div class="container">
     	<div class="col-md-6 offset-md-3 mt-5">
     		<!-- <hr> -->
-    		<small class="d-block text-center">GNU General Public License v3.0<br><a href="https://github.com/luiseduardosilva/webAdvancedBan">WebAdvancedBan</a> Version 1.0.0</small>
+    		<small class="d-block text-center">GNU General Public License v3.0<br><a href="https://github.com/luiseduardosilva/webAdvancedBan">WebAdvancedBan</a> Version 1.2</small>
     		<small class="d-block text-center">Desenvolvido por<br><a href="http://github.com/luiseduardosilva/">@LuisSilva</a></small>
 			</div>
 	</div>

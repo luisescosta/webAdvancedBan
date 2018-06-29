@@ -17,11 +17,11 @@ if(strpos($_SERVER['REQUEST_URI'], 'historico')){
 				<?php 
 					if($page->pageVolta()){
 						echo "<li class=\"page-item\">"
-						."<a href=\"".$page->pageVolta()."\" class=\"page-link\">Voltar</a>"
+						."<a href=\"".$page->pageVolta()."\" class=\"page-link\">".VOLT."</a>"
 						."</li>";
 					}else{
 						echo "<li class=\"page-item disabled\">"
-						."<a href=\"#\" class=\"page-link\">Voltar</a>"
+						."<a href=\"#\" class=\"page-link\">".VOLT."</a>"
 						."</li>";
 					}
 				?>
@@ -31,11 +31,11 @@ if(strpos($_SERVER['REQUEST_URI'], 'historico')){
 			<?php
 				if (count($bans->findAllLimit()) && ($paginas > $_GET['page']) ) {
 					echo "<li class=\"page-item\">
-						<a href=\"".$page->pageProxima()."\" class=\"page-link\">Próximo</a>
+						<a href=\"".$page->pageProxima()."\" class=\"page-link\">".PROX."</a>
 					</li>";
 				}else{
 					echo "<li class=\"page-item disabled\">
-						<a href=\"".$page->pageProxima()."\" class=\"page-link\">Próximo</a>
+						<a href=\"".$page->pageProxima()."\" class=\"page-link\">".PROX."</a>
 					</li>";
 				}
 			?>
