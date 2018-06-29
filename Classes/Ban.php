@@ -96,8 +96,10 @@ Class Ban extends Crud {
 		$startBan = date(DATE_FORMAT, intval($this->start/1000));
 		$endBan = date(DATE_FORMAT, intval($this->end/1000)); 
 		if ($this->end < 1 AND $this->punishmentType == "BAN") {
+			$bantype 	= "<th style='color:red;'>".PERMANENT."</th>"; 
 			$endBan 	= "<th style='color:red;'>".PERMANENT."</th>"; 
 		}else{
+			$bantype 	= "<th style='color:green;'>".TEMPORARY."</th>";
 			$endBan 	= "<th style='color:green'>".$endBan."</th>";
 		}
 
@@ -114,6 +116,7 @@ Class Ban extends Crud {
 		"<th><img class='img-avatar' data-html='true' title='<b><center>".strtoupper($this->name)."</b></center>' data-content=\"<img src='https://minotar.net/armor/body/".$this->name."/100'/>\" data-toggle='popover'  src='https://minotar.net/avatar/".$this->name."/24'>  ".strtoupper($this->name)."</th>".
 		"<th>".$msg."</th>"
 		.$this->operator
+		.$bantype
 		."<th>".$startBan."</th>"
 		.$endBan;
 	}
