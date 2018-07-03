@@ -1,5 +1,5 @@
 <?php
-require_once("DB.php");
+require_once("DB.class.php");
 abstract Class Crud extends DB {
 	protected $table;
 

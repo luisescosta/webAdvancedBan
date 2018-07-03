@@ -1,5 +1,5 @@
 <?php 
-Class Pagina {
+Class Pages {
 	
 	private $page;
 
@@ -25,12 +25,9 @@ Class Pagina {
 
 	// GET PAGA
 	public function __construct(){
-		if(strpos($_SERVER['REQUEST_URI'], 'historico')){
-			$ban = new Historico();
-		}elseif (strpos($_SERVER['REQUEST_URI'], 'alertas')) {
-			$ban = new Alerta();
-		}
-		else{
+		if(strpos($_SERVER['REQUEST_URI'], 'history')){
+			$ban = new Historic();
+		}else{
 			$ban = new Ban();
 		}
 		// EXISTE ALGO NO GET;
@@ -38,8 +35,11 @@ Class Pagina {
 			if (is_numeric($_GET['page']) AND $_GET['page'] > 0 ) {
 				$paginas = ceil(($ban->rowCount() / LIMIT_PAG));
 				if($paginas < $_GET['page']){
-					// header("Location: ".$this->pageVolta());
-					header("Location: index.php?page=".$paginas);
+					if(strpos($_SERVER['REQUEST_URI'], 'history')){
+						header("Location: history.php?page=".$paginas);
+					}else{
+						header("Location: index.php?page=".$paginas);						
+					}
 				}// GET NUMEROCO E MAIOR QUE 0;
 			return $this->page = $_GET['page'];
 			}

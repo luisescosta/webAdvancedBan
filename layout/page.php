@@ -2,11 +2,9 @@
 // DEFINA O NOME DO SEU SITE
 
 require_once("config.php");
-$page = new Pagina();
-if(strpos($_SERVER['REQUEST_URI'], 'historico')){
-	$bans = new Historico();
-}elseif (strpos($_SERVER['REQUEST_URI'], 'alertas')) {
-	$bans = new Alerta();
+$page = new Pages();
+if(strpos($_SERVER['REQUEST_URI'], 'history')){
+	$bans = new Historic();
 }else{
 	$bans = new Ban();
 }

@@ -5,7 +5,7 @@
 
 // AUTOLAOD
 spl_autoload_register(function ($className){
-	$filename = "Classes".DIRECTORY_SEPARATOR.$className.".php";
+	$filename = "class".DIRECTORY_SEPARATOR.$className.".class.php";
 	if (file_exists($filename)) {
 		require_once($filename);
 	}

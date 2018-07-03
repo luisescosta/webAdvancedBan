@@ -1,5 +1,5 @@
 <?php 
-require_once("Crud.php");
+require_once("Crud.class.php");
 Class Ban extends Crud {
 	protected $table = "Punishments";
 	// LIMITE DE REGISTRO POR PAGINAS
@@ -64,7 +64,7 @@ Class Ban extends Crud {
 		}	}
 
 	public function findAllLimit(){
-		$page = new Pagina();
+		$page = new Pages();
 		$pagina = $page->getPage();
 		$this->offset = ($pagina * $this->limite) - $this->limite;
 		if ($this->offset <= 0) {

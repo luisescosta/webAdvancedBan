@@ -1,6 +1,6 @@
 <?php 
-require_once("Crud.php");
-Class Historico extends Crud {
+require_once("Crud.class.php");
+Class Historic extends Crud {
 	protected $table = "PunishmentHistory";
 	// LIMITE DE REGISTRO POR PAGINAS
 	private $limite = LIMIT_PAG;
@@ -59,7 +59,7 @@ Class Historico extends Crud {
 	}
 
 	public function findAllLimit(){
-		$page = new Pagina();
+		$page = new Pages();
 		$pagina = $page->getPage();
 		$this->offset = ($pagina * $this->limite) - $this->limite;
 		if ($this->offset <= 0) {

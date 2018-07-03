@@ -1,6 +1,6 @@
 <?php
 require_once("config.php");
-$punishments = new Historico();
+$punishments = new Historic();
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +63,7 @@ $punishments = new Historico();
 										($punishments->getOffset() <= 0) ? $contador = 0 : $contador = $punishments->getOffset();
 										foreach ($array as $value):
 											$contador++;
-											$punishments = new Historico($value->name, $value->uuid, $value->reason, $value->operator, $value->punishmentType, $value->start, $value->end, $value->calculation, $contador);	
+											$punishments = new Historic($value->name, $value->uuid, $value->reason, $value->operator, $value->punishmentType, $value->start, $value->end, $value->calculation, $contador);	
 										?>
 									<tr>
 										<?php echo $punishments; ?>
