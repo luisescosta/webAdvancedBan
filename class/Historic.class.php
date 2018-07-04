@@ -9,7 +9,7 @@ Class Historic extends Crud {
 
 	private $name;
 	private $uuid;
-	private $raseon;
+	private $reaseon;
 	private $operator;
 	private $start;
 	private $punishmentType;
@@ -21,10 +21,10 @@ Class Historic extends Crud {
 	// VALOR NULL PADRAO;
 	private $null = "none";
 
-	public function __construct($name = "", $uuid= "" ,$raseon= "", $operator= "", $punishmentType="", $start= "", $end="", $calculation = 0, $contador = 0){
+	public function __construct($name = "", $uuid= "" ,$reaseon= "", $operator= "", $punishmentType="", $start= "", $end="", $calculation = 0, $contador = 0){
 		$this->name 			= $name;
 		$this->uuid 			= $uuid;
-		$this->raseon 			= mb_strtoupper($raseon, "UTF-8");
+		$this->reaseon 			= mb_strtoupper($reaseon, "UTF-8");
 		$this->operator 		= $operator;
 		$this->punishmentType 	= $punishmentType;
 		$this->start 			= $start;
@@ -101,7 +101,7 @@ Class Historic extends Crud {
 		}
 
 		// MSG BUTTON		
-		$msg = "<button class=\"btn btn-sm btn-light btn-block uppercase\" title='<center>".RASEON."</center>' data-toggle='popover' data-html='true' data-content='".$this->raseon."' ><span class=\"oi oi-magnifying-glass\"></span></button>";
+		$msg = "<button class=\"btn btn-sm btn-light btn-block uppercase\" title='<center>".REASEON."</center>' data-toggle='popover' data-html='true' data-content='".$this->reaseon."' ><span class=\"oi oi-magnifying-glass\"></span></button>";
 		return 
 		"<th>".$this->contador."</th>".
 		"<th><img class='img-avatar' data-html='true' title='<b><center>".strtoupper($this->name)."</b></center>' data-content=\"<img src='https://minotar.net/armor/body/".$this->name."/100'/>\" data-toggle='popover'  src='https://minotar.net/avatar/".$this->name."/24'>  ".strtoupper($this->name)."</th>".

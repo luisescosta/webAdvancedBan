@@ -24,7 +24,7 @@ const DB_PORT 	= "3306";
 *	CONFIG LIMIT PAGINATION
 *	@param {Int}
 */
-define("LIMIT_PAG"	, 10);
+define("LIMIT_PAG"	, 2);
 
 if (LANGUAGE == "PT_BR" OR LANGUAGE == "PT-BR" OR LANGUAGE == "pt-br" OR LANGUAGE == "pt_br") {
 	// PT_BR - PORTUGUÊS
@@ -37,7 +37,7 @@ if (LANGUAGE == "PT_BR" OR LANGUAGE == "PT-BR" OR LANGUAGE == "pt-br" OR LANGUAG
 	define("TB_INDEX" 	,"LISTA DE BANIDOS");
 	define("TB_HISTORY", "HISTÓRICO DE BANIDOS");
 	define("SEARCH" 	, "Procurar");
-	define("RASEON" 	, "MOTIVO");
+	define("REASEON" 	, "MOTIVO");
 	define("BY" 		, "POR");
 	define("TYPE"		, "TIPO");
 	define("DATE"		, "DATA");
@@ -63,7 +63,7 @@ if (LANGUAGE == "PT_BR" OR LANGUAGE == "PT-BR" OR LANGUAGE == "pt-br" OR LANGUAG
 	define("TB_INDEX" 	, "BANNED LIST");
 	define("TB_HISTORY", "HISTORY LIST");
 	define("SEARCH" 	, "Search");
-	define("RASEON" 	, "REASEON");
+	define("REASEON" 	, "REASEON");
 	define("BY" 		, "BY");
 	define("TYPE"		, "TYPE");
 	define("DATE"		, "DATE");
